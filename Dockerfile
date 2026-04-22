@@ -1,9 +1,7 @@
 # Dockerfile
 FROM ghcr.io/openclaw/openclaw:latest
 
-FROM ghcr.io/openclaw/openclaw:latest
-
-# Instalar @google/gemini-cli
+# Instalar @google/gemini-cli y uv
 USER root
 RUN npm install -g @google/gemini-cli
 
