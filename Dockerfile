@@ -14,5 +14,10 @@ COPY artifacts/uvx /usr/local/bin/uvx
 COPY artifacts/gh.deb /tmp/gh.deb
 RUN apt-get update && apt-get install -y /tmp/gh.deb && rm /tmp/gh.deb && rm -rf /var/lib/apt/lists/*
 
+RUN curl -LO "https://dl.k8s.io/release/v1.32.3/bin/linux/amd64/kubectl" && \
+    chmod +x kubectl && \
+    mv kubectl /usr/local/bin/ && \
+    kubectl version --client
+
 # Volvemos al usuario node para seguridad
 USER node
