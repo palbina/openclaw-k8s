@@ -37,7 +37,7 @@ jobs:
         with:
           registry: ghcr.io
           username: palbina
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.PAT_TOKEN }}
 
       - name: Build and push
         uses: docker/build-push-action@v7
